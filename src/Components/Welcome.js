@@ -1,5 +1,6 @@
 import { onNavigate } from '../main.js';
-import { signInWithGoogle } from '../firebase/authFunctions.js';
+import { loginGoogle, signInWithEmail } from '../firebase/authFunctions.js';
+//import { signInWithEmail } from '../firebase/authFunctions.js';
 
 export const Welcome = () => {
 
@@ -38,14 +39,15 @@ export const Welcome = () => {
   WelcomeDiv.appendChild(BackgroundMobile);
 
   WelcomeDiv.classList.add("WelcomeDiv");
-  WelcomeDiv.querySelector("#buttonLogin").addEventListener('click', () => onNavigate ('/login'));
+  WelcomeDiv.querySelector("#buttonLogin").addEventListener('click', (e) => {
+    e.preventDefault();
+    const loginEmail = WelcomeDiv.querySelector("#email").value;
+    const loginPassword = WelcomeDiv.querySelector("#password").value;
+    signInWithEmail(loginEmail,loginPassword).then(r => r)});
+
   WelcomeDiv.querySelector("#buttonRegister").addEventListener('click', () => onNavigate ('/register'));
 
-  WelcomeDiv.querySelector("#googleBtn").addEventListener('click', () => {
-    const provider = new GoogleAuthProvider();
-    const auth = getAuth();
-    signInWithGoogle(provider,auth)
-  });
+  WelcomeDiv.querySelector("#googleBtn").addEventListener('click', () => loginGoogle());
 
   WelcomeDiv.querySelector("#buttonRegister").addEventListener('click', () => {
    let backgroundBody = document.getElementById("bodies")
