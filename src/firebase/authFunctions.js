@@ -35,7 +35,7 @@ return signInWithEmailAndPassword(auth, loginEmail, loginPassword)
     console.log(wrongMessage)
   });
 };
-
+/* Función para iniciar sesión con Google*/
 export const loginGoogle = () => {
 const provider = new GoogleAuthProvider();
 signInWithPopup(auth, provider)
