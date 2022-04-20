@@ -39,11 +39,12 @@ export const Welcome = () => {
   WelcomeDiv.appendChild(BackgroundMobile);
 
   WelcomeDiv.classList.add("WelcomeDiv");
-  WelcomeDiv.querySelector("#buttonLogin").addEventListener('click', (e) => {
-    e.preventDefault();
-    const loginEmail = WelcomeDiv.querySelector("#email").value;
-    const loginPassword = WelcomeDiv.querySelector("#password").value;
-    signInWithEmail(loginEmail,loginPassword).then(r => r)});
+
+  WelcomeDiv.querySelector("#buttonLogin").addEventListener('click', () => {
+    const loginEmail = document.getElementById("email").value;
+    const loginPassword = document.getElementById("password").value;
+    signInWithEmail(loginEmail,loginPassword)
+    });
 
   WelcomeDiv.querySelector("#buttonRegister").addEventListener('click', () => onNavigate ('/register'));
 
