@@ -59,7 +59,8 @@ export const Register= () =>{
   RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {
     const loginEmail = document.getElementById("email").value;
     const loginPassword = document.getElementById("password").value;
-    registerWithEmail(loginEmail,loginPassword)
+    const loginName = document.getElementById("nickName").value;
+    registerWithEmail(loginEmail,loginPassword,loginName)
   });
 
   RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {
