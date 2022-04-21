@@ -7,10 +7,8 @@ const auth = getAuth();
 
 export const registerWithEmail = (loginEmail,loginPassword) => {
 //console.log(loginEmail,loginPassword)
-const auth = getAuth();
- return createUserWithEmailAndPassword(auth, loginEmail, loginPassword)
+createUserWithEmailAndPassword(auth, loginEmail, loginPassword)
   .then((userCredential) => {
-    // Signed in
     const user = userCredential.user;
     console.log(user)
     onNavigate('/');
@@ -20,7 +18,6 @@ const auth = getAuth();
     const errorMessage = error.message;
     //console.log(errorMessage)
     //onNavigate('/');
-    return errorMessage;
   });
 };
 
@@ -37,7 +34,7 @@ return signInWithEmailAndPassword(auth, loginEmail, loginPassword)
     console.log(wrongMessage)
   });
 };
-/* Función para iniciar sesión con Google*/
+
 export const loginGoogle = () => {
 const provider = new GoogleAuthProvider();
 signInWithPopup(auth, provider)
@@ -54,47 +51,4 @@ signInWithPopup(auth, provider)
     const credential = GoogleAuthProvider.credentialFromError(error);
     onNavigate('/login');
   });
-};
-
-export const signInWithEmail = (loginEmail,loginPassword,alertEmail) => {
-  const auth1 =  getAuth();
- signInWithEmailAndPassword(auth1, loginEmail, loginPassword)
-  .then((userCredential) => {
-    const user = userCredential.user;
-    onAuthStateChanged(auth1, (user) => {
-        const correctEmail = user.correctEmail;
-        const uid = user.uid;
-        if (correctEmail) {
-          
-          onNavigate('/');
-        }
-        else {
-          wrongEmail.innerText = 'Verifique su email';
-        }
-});
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    switch (errorCode) {
-      case 'auth/user-not-found':
-        wrongEmail.innerText = 'No existe usuario registrado con ese correo';
-        break;
-      case 'auth/wrong-password':
-        wrongEmail.innerText = 'La contraseña no es válida, intente de nuevo.';
-        break;
-      case 'auth/internal-error':
-        wrongEmail.innerText = 'Digite correctamente su contraseña';
-        break;
-      case 'auth/invalid-email':
-        wrongEmail.innerText = 'Digite correctamente su correo y contraseña';
-        break;
-      case 'auth/email-already-exists':
-        wrongEmail.innerText = 'Este correo ya esta registrado, intente de nuevo.';
-        break;
-      default:
-        wrongEmail.innerText = errorCode;
-    }
-  });
-return result;
 };
