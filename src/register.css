@@ -22,16 +22,22 @@
    margin-top: 45px;
  }
 
+ .infoRegister::placeholder{
+   color: #C5C5C5;
+   font-family: 'Inter', sans-serif;
+   font-size: 14px;
+ }
+
  .questionReturnHome{
    margin-top: 84px;
  }
  .text-error{
-   display: none;
-   /*color: red;
+   /*display: none;*/
+   color: red;
    font-size: 13px;
    font-weight: 600;
    font-family: 'Inter', sans-serif;
-   margin-top: 6px;*/
+   margin-top: 6px;
  }
 
  #containerLogotype{

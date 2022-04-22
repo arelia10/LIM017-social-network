@@ -10,13 +10,12 @@ export const db = getFirestore();
 export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
   createUserWithEmailAndPassword(auth, loginEmail, loginPassword)
    .then(() => {
-   try {
+    try {
     const RegisterTellMe =  addDoc(collection(db, "RegisterTellMe"), {
       newNickName:loginName,
       newEmail:loginEmail,
     });
     console.log("Registro realizado ", RegisterTellMe.nickName);
-
   }
   catch (e){
     console.error("Error, no se pudo registrar ", e);
@@ -27,29 +26,6 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
      const errorMessage = error.message;
      alert("errorMessage");
    });
-
-//console.log(loginEmail,loginPassword)
-/*createUserWithEmailAndPassword(auth,loginEmail,loginPassword)
-  .then((userCredential) => {
-    try {
-    const RegisterTellMe = addDoc(collection(db,"RegisterTellMe"), {
-      nickName:nickName,
-      email:loginEmail,
-    });
-    console.log("Registro realizado");
-    const user = userCredential.user;
-    console.log(user)
-    onNavigate('/');
-  }
-  catch (e){
-  console.error("Error, no se pudo registrar", e);
-  }})
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    //console.log(errorMessage)
-    //onNavigate('/');
-  });*/
 };
 
 export const signInWithEmail = (loginEmail,loginPassword) => {
