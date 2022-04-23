@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { registerWithEmail } from '../firebase/authFunctions.js';
+import { registerWithEmail,} from '../firebase/authFunctions.js';
 
 
 export const Register= () =>{
@@ -8,20 +8,19 @@ export const Register= () =>{
   RegisterSection.innerHTML = `<section>
       <main id="containerRegister" class="containerRegister">
         <p id="registerApp" class="registerApp">Regístrate</p>
+        <p id="txtError" class="text-error"</p>
           <div id="formRegister" class="txtRegister">
             <div id="nickNameLabel">
               <p class="txtAccount">Nickname</p>
-              <input type="text" id="nickName" class="infoRegister"></input>
-                <!--<p class="text-error">Ingresa solo números, letras y guión bajo.</p>-->
+              <input type="text" id="nickName" class="infoRegister">
             </div>
               <div>
                 <p class="txtAccount">Email</p>
-                <input type="email" id="email" class="infoRegister"></input>
+                <input type="email" id="email" class="infoRegister">
               </div>
                 <div id="passwordLabel">
                   <p class="txtAccount">Password</p>
-                  <input id="password" class="infoRegister" pattern=".{6,6}" type="password"></input>
-                    <p class="text-error">La clave debe contener solo 6 dígitos.</p>
+                  <input id="password" class="infoRegister" type="password" placeholder= "Ingrese solo 6 caracteres" minlength="6" maxlength="10" required/>
                 </div>
               <button type="submit" id="buttonAccount">Crear cuenta</button>
                 <div class="questionReturnHome">
@@ -56,7 +55,10 @@ export const Register= () =>{
 
   RegisterSection.classList.add("RegisterSection");
 
-  RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {
+  /*RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {*/
+  RegisterSection.querySelector("#buttonAccount").addEventListener('click', e => {
+    e.preventDeFault()
+    const paragraph = document.getElementById("txtError").value;
     const loginEmail = document.getElementById("email").value;
     const loginPassword = document.getElementById("password").value;
     const loginName = document.getElementById("nickName").value;
