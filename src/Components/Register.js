@@ -5,7 +5,8 @@ import { registerWithEmail } from '../firebase/authFunctions.js';
 export const Register= () =>{
 
   let RegisterSection= document.createElement("section");
-  RegisterSection.innerHTML = `<section>
+  RegisterSection.innerHTML =  /*html*/
+  `<section>
       <main id="containerRegister" class="containerRegister">
         <p id="registerApp" class="registerApp">Regístrate</p>
           <div id="formRegister" class="txtRegister">
@@ -33,7 +34,8 @@ export const Register= () =>{
 
 
   let LogotypeSection=document.createElement("section");
-  LogotypeSection.innerHTML =`<section id="containerLogotype">
+  LogotypeSection.innerHTML = /*html*/
+  `<section id="containerLogotype">
       <img class="logotypeRegister" src="./img/LogoTellMeBlanco.svg">
   </section>`
 
@@ -45,7 +47,8 @@ export const Register= () =>{
   </section>`*/
 
   let ContainerBackground=document.createElement("section");
-  ContainerBackground.innerHTML =`<section>
+  ContainerBackground.innerHTML =/*html*/
+  `<section>
       <main class="containerBackground">
       </main>
   </section>`
@@ -59,7 +62,8 @@ export const Register= () =>{
   RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {
     const loginEmail = document.getElementById("email").value;
     const loginPassword = document.getElementById("password").value;
-    registerWithEmail(loginEmail,loginPassword)
+    const loginName = document.getElementById("nickName").value;
+    registerWithEmail(loginEmail,loginPassword,loginName)
   });
 
   RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {

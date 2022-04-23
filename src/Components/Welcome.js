@@ -5,7 +5,8 @@ import { loginGoogle, signInWithEmail } from '../firebase/authFunctions.js';
 export const Welcome = () => {
 
   let WelcomeDiv = document.createElement("section");
-  WelcomeDiv.innerHTML = `<section>
+  WelcomeDiv.innerHTML = /*html*/
+  `<section>
    <main class="container">
      <img class="logotype" src="./img/LogoTellMe.svg">
     <div>

@@ -1,14 +1,20 @@
 import { onNavigate } from '../main.js';
 
 export const Login= () =>{
-  let WelcomeDiv= document.createElement("div");
-  WelcomeDiv.textContent= "User1234";
+  let LoginDiv= document.createElement("section");
+    LoginDiv.innerHTML = `<section>
+
+    </section>`
+
+
   let buttonLogin= document.createElement("button");
 
   buttonLogin.textContent="Cerrar sesión";
   buttonLogin.addEventListener('click', () => onNavigate('/'));
 
-  WelcomeDiv.appendChild(buttonLogin);
+  LoginDiv.appendChild(buttonLogin);
 
-  return WelcomeDiv;
+
+
+  return LoginDiv;
 };
