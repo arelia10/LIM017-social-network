@@ -18,7 +18,7 @@ export const Login= () =>{
         <button id="buttonPost">Publicar</button>
         <button id="buttonEdit">Editar</button>
         <button id="buttonTrash"><img class="buttonTrashStyle" src="./img/iconTrash.svg"></button>
-      </div>
+     </div>
   </section>
 
 <!--Container post user's friend -->
@@ -38,10 +38,6 @@ export const Login= () =>{
           <p id="txtComment" class="txtCommentStyle">Ver comentarios</p>
         </div>
   </section>`
-
-
-
-
 
 
 
