@@ -1,3 +1,32 @@
-.backgroundHeader{
-  background-color: #FB727C;
+
+.ac{
+    background-color: #FB727C;
+    height:100px;
+}
+.isotype{
+    float: left;
+    height: 4rem;
+    padding: 1rem;
+}
+.loginOutIcon{
+height: 51px;
+width: 51px;
+float: right;
+
+}
+#loginOutBtn{
+    background-color: inherit;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem;
+    float: right;
+    border:none
+}
+.user{
+    background-color: #FB727C;
+    height:50px;
+}
+p{
+    font-size:40px;
+    color:white;
 }

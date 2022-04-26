@@ -5,7 +5,7 @@ import { registerWithEmail } from '../firebase/authFunctions.js';
 export const Register= () =>{
 
   let RegisterSection= document.createElement("section");
-  RegisterSection.innerHTML =  /*html*/
+  RegisterSection.innerHTML = /*html*/
   `<section>
       <main id="containerRegister" class="containerRegister">
         <p id="registerApp" class="registerApp">Regístrate</p>
@@ -34,8 +34,7 @@ export const Register= () =>{
 
 
   let LogotypeSection=document.createElement("section");
-  LogotypeSection.innerHTML = /*html*/
-  `<section id="containerLogotype">
+  LogotypeSection.innerHTML =`<section id="containerLogotype">
       <img class="logotypeRegister" src="./img/LogoTellMeBlanco.svg">
   </section>`
 
@@ -47,7 +46,7 @@ export const Register= () =>{
   </section>`*/
 
   let ContainerBackground=document.createElement("section");
-  ContainerBackground.innerHTML =/*html*/
+  ContainerBackground.innerHTML = /*html*/
   `<section>
       <main class="containerBackground">
       </main>
@@ -60,6 +59,7 @@ export const Register= () =>{
   RegisterSection.classList.add("RegisterSection");
 
   RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {
+    
     const loginEmail = document.getElementById("email").value;
     const loginPassword = document.getElementById("password").value;
     const loginName = document.getElementById("nickName").value;
