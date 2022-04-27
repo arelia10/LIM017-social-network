@@ -1,3 +1,102 @@
-
-
+.loginMain{
+    width: 100vw;
+    height: 100vh;
+}
+#backgroundHeader{
+    background-color: #FB727C;
+    align-items: center;
+}
+.isotype{
+  width: 50px;
+  padding: 15px;
+}
+#loginOutBtn{
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  float: right;
+}
+.loginOutIcon{
+  height: 51px;
+  width: 51px;
+  float: right;
+}
+#postContainer{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-color: #471F54;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1.8px;
+  height: 170px;
+  width: 335px;
+  left: 50%;
+  top: 24%;
+}
+.userInfoPost{
+  padding: 10px;
+  margin: 10px;
+  height: 88px;
+  width: 296px;
+  border: none;
+  background-color: #EDE9EE;
+  border-radius: 7px;
+  resize: none;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  color: #8E8989;
+}
+.userInfoPost::placeholder{
+  font-size: 15px;
+  font-style: italic;
+}
+#buttonPost{
+  cursor: pointer;
+  background-color: #471F54;
+  border-radius: 25px;
+  border: none;
+  height: 25px;
+  width: 102px;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  margin-left: 10px;
+}
+#buttonEdit{
+  cursor: pointer;
+  background-color: #FB727C;
+  border-radius: 25px;
+  border: none;
+  height: 25px;
+  width: 102px;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  margin-left: 10px;
+}
+.buttonTrashStyle{
+  height: 27px;
+  width: 51px;
+  float: right;
+}
+#buttonTrash{
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: -18px;
+  float: right;
+  margin-right: -17px;
+}
+.equisIcon {
+  display: none;
+}
+.cloudTxtIcon{
+  display: none;
+}
+#postContainerFriend1{
+  display: none;
+}
 
