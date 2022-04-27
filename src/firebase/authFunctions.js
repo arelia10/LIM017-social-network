@@ -15,17 +15,37 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
       newNickName:loginName,
       newEmail:loginEmail,
     });
-    console.log("Registro realizado ", RegisterTellMe.nickName);
+    /*alert("Registro realizado con éxito ", RegisterTellMe.nickName);*/
+    swal.fire({
+                    title: '<p class="txtConfirmSwal">Te registraste con éxito</p>',
+                    icon: "success",
+                    confirmButtonText: '<p class="txtBtnConfirmSwal">¡Comencemos!</p>',
+                    showConfirmButton: 'true',
+                    confirmButtonColor: '#471F54',
+                    buttonsStyling: 'false',
+                    customClass:{
+                      confirmButton:'confirmButtonStyle',
+                    }
+                  })
+                  .then((result) => {
+                    if(result){
+                    location.href=("/")
+                    }else{
+                      window.location.reload()
+                    }
+                  })
   }
   catch (e){
-    console.error("Error, no se pudo registrar ", e);
+    console.error("Error, el correo ya se encuentra registrado", e);
   }
 })
    .catch((error) => {
      const errorCode = error.code;
      const errorMessage = error.message;
-     alert("errorMessage");
+     alert("Error, debes ingresar datos correctos");
    });
+
+   /*onNavigate('/');*/
 };
 
 export const signInWithEmail = (loginEmail,loginPassword) => {
