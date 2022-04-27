@@ -45,4 +45,8 @@
     height: 156px;
     margin-top: 20px;
   }
+  #postContainer{
+    /*height: 170px;*/
+    width: 715px;
+  }
 }

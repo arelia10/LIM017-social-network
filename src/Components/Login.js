@@ -21,7 +21,7 @@ export const Login= () =>{
      </div>
   </section>
 
-<!--Container post user's friend -->
+<!--Container post user's friend 1 -->
   <br>
   <section id="postContainerFriend1">
     <div id="postFriend1" class="postFriendStyle">
@@ -29,14 +29,33 @@ export const Login= () =>{
       <img class="cloudTxtIcon" src="./img/cloudTxtIcon.svg">
     </div>
       <div>
-        <p id="txtFriend" class="txtFriendStyle">Me siento muy feliz.¡Fue un día increíble!</p>
+        <textarea type="text" id="txtFriend" class="txtFriendStyle">Me siento muy feliz. ¡Fue un día increíble!</textarea>
+        <!--<p id="txtFriend" class="txtFriendStyle">Me siento muy feliz. ¡Fue un día increíble!</p>-->
       </div>
-        <div>
+        <div id="likesAndComments" class="likesAndCommentsStyle">
           <button id="buttonLikes"><img class="buttonLikesStyle" src="./img/likesIcon.svg"></button>
-          <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
-          <button id="buttonComment"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
-          <p id="txtComment" class="txtCommentStyle">Ver comentarios</p>
+            <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
+              <button id="buttonComment"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
+              <p id="txtComment" class="txtCommentStyle">Ver comentarios</p>
         </div>
+
+<!--Container post user's friend 2 -->
+  <br>
+  <section id="postContainerFriend2">
+    <div id="postFriend1" class="postFriendStyle">
+      <img class="equisIcon" src="./img/equis.svg">
+      <img class="cloudTxtIcon" src="./img/cloudTxtIcon.svg">
+    </div>
+        <div>
+          <textarea type="text" id="txtFriend" class="txtFriendStyle">Me siento muy feliz. ¡Fue un día increíble!</textarea>
+          <!--<p id="txtFriend" class="txtFriendStyle">Me siento muy feliz. ¡Fue un día increíble!</p>-->
+        </div>
+          <div id="likesAndComments" class="likesAndCommentsStyle">
+            <button id="buttonLikes"><img class="buttonLikesStyle" src="./img/likesIcon.svg"></button>
+             <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
+              <button id="buttonComment"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
+               <p id="txtComment" class="txtCommentStyle">Ver comentarios</p>
+       </div>
   </section>`
 
 

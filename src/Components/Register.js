@@ -8,8 +8,7 @@ export const Register= () =>{
   RegisterSection.innerHTML = `<section>
       <main id="containerRegister" class="containerRegister">
         <p id="registerApp" class="registerApp">Regístrate</p>
-        <p id="txtError" class="text-error"</p>
-          <div id="formRegister" class="txtRegister">
+        <div id="formRegister" class="txtRegister">
             <div id="nickNameLabel">
               <p class="txtAccount">Nickname</p>
               <input type="text" id="nickName" class="infoRegister">
@@ -23,10 +22,11 @@ export const Register= () =>{
                   <input id="password" class="infoRegister" type="password" placeholder= "Ingrese solo 6 caracteres" minlength="6" maxlength="10" required/>
                 </div>
               <button type="submit" id="buttonAccount">Crear cuenta</button>
+              <p id="txtError" class="text-error"></p>
                 <div class="questionReturnHome">
                   <p class="questionAccount">¿Ya tienes una cuenta?<button id="buttonReturnHome"><u>Ingresa aquí</u></button></p>
                 </div>
-        </div>
+         </div>
     </main>
   </section>`
 
@@ -55,21 +55,13 @@ export const Register= () =>{
 
   RegisterSection.classList.add("RegisterSection");
 
-  /*RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {*/
-  RegisterSection.querySelector("#buttonAccount").addEventListener('click', e => {
-    e.preventDeFault()
+  RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {
     const paragraph = document.getElementById("txtError").value;
     const loginEmail = document.getElementById("email").value;
     const loginPassword = document.getElementById("password").value;
     const loginName = document.getElementById("nickName").value;
     registerWithEmail(loginEmail,loginPassword,loginName)
   });
-
-  RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {
-   let backgroundBody = document.getElementById("bodies")
-   backgroundBody.classList.remove("containerBackground")
-   backgroundBody.classList.add("bodyBackground")
- });
 
   RegisterSection.querySelector("#buttonReturnHome").addEventListener('click', () => {
     let backgroundBody = document.getElementById("bodies")

@@ -114,10 +114,29 @@
   /*margin-top: 700px;*/
 }
 .questionAccount{
-  margin-top: 55px;
+  /*margin-top: -31px;*/
   font-size: 16px;
   text-align:center;
   font-family: 'Inter', sans-serif;
-  /*margin-left: 43px;*/
   color: white;
+}
+
+/*SWEET ALERT CSS*/
+.txtConfirmSwal{
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  color: #8E8989;
+}
+.txtBtnConfirmSwal{
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: white;
+  margin-top: -1px;
+}
+.confirmButtonStyle{
+  background-color: #471F54;
+  border-radius: 25px;
+  border: none;
+  height: 40px;
+  width: 180px;
 }
