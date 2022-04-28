@@ -1,51 +1,62 @@
-@media (min-width:760px){
-  .bodyBackground{
+@media (min-width:760px) {
+  .bodyBackground {
     background: url("./img/bgWelcome.jpg") no-repeat center fixed;
     background-size: cover;
   }
-  .mobile{
+
+  .mobile {
     display: none;
   }
-  .container{
+
+  .container {
     width: 454px;
     height: 703px;
     left: 77%;
   }
-  .questionPassword{
+
+  .questionPassword {
     margin-top: 36px;
   }
-  #containerLogotype{
+
+  #containerLogotype {
     margin-top: 29px;
     margin-left: 20px;
   }
-  .containerRegister{
+
+  .containerRegister {
     width: 410px;
     height: 498px;
   }
+
   .txtAccount {
     padding-left: 76px;
   }
-  .containerBackground{
+
+  .containerBackground {
     background: url("./img/bgRegistroDesktop.jpg") no-repeat center fixed;
     background-size: cover;
   }
-  .questionAccount{
-    text-align:center;
+
+  .questionAccount {
+    text-align: center;
     font-size: 18px;
     font-weight: 400;
     font-family: 'Inter', sans-serif;
     color: #471F54;
   }
-  #buttonReturnHome{
+
+  #buttonReturnHome {
     color: #471F54;
     font-size: 18px;
   }
-  .logotypeRegister{
+
+  .logotypeRegister {
     width: 301px;
     height: 156px;
     margin-top: 20px;
   }
-  #postContainer{
+
+  #postContainer {
     /*height: 170px;*/
     width: 715px;
   }
