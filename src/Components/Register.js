@@ -1,10 +1,8 @@
 import { onNavigate } from '../main.js';
-import { registerWithEmail,} from '../firebase/authFunctions.js';
+import { registerWithEmail } from '../firebase/authFunctions.js';
 
-
-export const Register= () =>{
-
-  let RegisterSection= document.createElement("section");
+export const Register = () => {
+  const RegisterSection = document.createElement('section');
   RegisterSection.innerHTML = `<section>
       <main id="containerRegister" class="containerRegister">
         <p id="registerApp" class="registerApp">Regístrate</p>
@@ -28,47 +26,37 @@ export const Register= () =>{
                 </div>
          </div>
     </main>
-  </section>`
+  </section>`;
 
-
-  let LogotypeSection=document.createElement("section");
-  LogotypeSection.innerHTML =`<section id="containerLogotype">
+  const LogotypeSection = document.createElement('section');
+  LogotypeSection.innerHTML = `<section id="containerLogotype">
       <img class="logotypeRegister" src="./img/LogoTellMeBlanco.svg">
-  </section>`
+  </section>`;
 
-  /*let ConditionsSection=document.createElement("section");
-  ConditionsSection.innerHTML =`<section class="sectionBody">
-         <div>
-           <p class="textConditions">Al registrarte aceptas nuestras<br>políticas de privacidad y uso de<br>datos personales.</p>
-         </div>
-  </section>`*/
-
-  let ContainerBackground=document.createElement("section");
-  ContainerBackground.innerHTML =`<section>
+  const ContainerBackground = document.createElement('section');
+  ContainerBackground.innerHTML = `<section>
       <main class="containerBackground">
       </main>
-  </section>`
+  </section>`;
 
   RegisterSection.appendChild(ContainerBackground);
   RegisterSection.appendChild(LogotypeSection);
-  /*RegisterSection.appendChild(ConditionsSection);*/
 
-  RegisterSection.classList.add("RegisterSection");
+  RegisterSection.classList.add('RegisterSection');
 
-  RegisterSection.querySelector("#buttonAccount").addEventListener('click', () => {
-    const paragraph = document.getElementById("txtError").value;
-    const loginEmail = document.getElementById("email").value;
-    const loginPassword = document.getElementById("password").value;
-    const loginName = document.getElementById("nickName").value;
-    registerWithEmail(loginEmail,loginPassword,loginName)
+  RegisterSection.querySelector('#buttonAccount').addEventListener('click', () => {
+    const loginEmail = document.getElementById('email').value;
+    const loginPassword = document.getElementById('password').value;
+    const loginName = document.getElementById('nickName').value;
+    registerWithEmail(loginEmail, loginPassword, loginName);
   });
 
-  RegisterSection.querySelector("#buttonReturnHome").addEventListener('click', () => {
-    let backgroundBody = document.getElementById("bodies")
-    backgroundBody.classList.remove("containerBackground")
-    backgroundBody.classList.add("bodyBackground")
-    onNavigate ('/')});
-
+  RegisterSection.querySelector('#buttonReturnHome').addEventListener('click', () => {
+    const backgroundBody = document.getElementById('bodies');
+    backgroundBody.classList.remove('containerBackground');
+    backgroundBody.classList.add('bodyBackground');
+    onNavigate('/');
+  });
 
   return RegisterSection;
 };

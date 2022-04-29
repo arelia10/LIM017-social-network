@@ -1,10 +1,8 @@
 import { onNavigate } from '../main.js';
 import { loginGoogle, signInWithEmail } from '../firebase/authFunctions.js';
-//import { signInWithEmail } from '../firebase/authFunctions.js';
 
 export const Welcome = () => {
-
-  let WelcomeDiv = document.createElement("section");
+  const WelcomeDiv = document.createElement('section');
   WelcomeDiv.innerHTML = `<section>
    <main class="container">
      <img class="logotype" src="./img/LogoTellMe.svg">
@@ -28,34 +26,32 @@ export const Welcome = () => {
               <p class="createLogin">¿No tienes una cuenta?<button id="buttonRegister"><u>Regístrate</u></button></p>
             </div>
     </main>
-    </section>`
+    </section>`;
 
-  let BackgroundMobile=document.createElement("main");
+  const BackgroundMobile = document.createElement('main');
   BackgroundMobile.innerHTML = `<main>
       <img class="mobile" src="./img/bgMobile.jpg">
-    </main>`
-
+    </main>`;
 
   WelcomeDiv.appendChild(BackgroundMobile);
 
-  WelcomeDiv.classList.add("WelcomeDiv");
+  WelcomeDiv.classList.add('WelcomeDiv');
 
-  WelcomeDiv.querySelector("#buttonLogin").addEventListener('click', () => {
-    const loginEmail = document.getElementById("email").value;
-    const loginPassword = document.getElementById("password").value;
-    signInWithEmail(loginEmail,loginPassword)
-    });
-
-  WelcomeDiv.querySelector("#buttonRegister").addEventListener('click', () => onNavigate ('/register'));
-
-  WelcomeDiv.querySelector("#googleBtn").addEventListener('click', () => loginGoogle());
-
-  WelcomeDiv.querySelector("#buttonRegister").addEventListener('click', () => {
-   let backgroundBody = document.getElementById("bodies")
-   backgroundBody.classList.remove("bodyBackground")
-   backgroundBody.classList.add("containerBackground")
+  WelcomeDiv.querySelector('#buttonLogin').addEventListener('click', () => {
+    const loginEmail = document.getElementById('email').value;
+    const loginPassword = document.getElementById('password').value;
+    signInWithEmail(loginEmail, loginPassword);
   });
 
+  WelcomeDiv.querySelector('#buttonRegister').addEventListener('click', () => onNavigate('/register'));
+
+  WelcomeDiv.querySelector('#googleBtn').addEventListener('click', () => loginGoogle());
+
+  WelcomeDiv.querySelector('#buttonRegister').addEventListener('click', () => {
+    const backgroundBody = document.getElementById('bodies');
+    backgroundBody.classList.remove('bodyBackground');
+    backgroundBody.classList.add('containerBackground');
+  });
 
   return WelcomeDiv;
 };
