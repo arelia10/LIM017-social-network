@@ -90,13 +90,99 @@
   float: right;
   margin-right: -17px;
 }
+#postContainerFriend1{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-color: #471F54;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1.8px;
+  height: 191px;
+  width: 335px;
+  left: 50%;
+  top: 50%;
+}
+.postFriendStyle{
+  background-color: #471F54;
+  border-radius: 10px 10px 0px 0px;
+  height: 40px;
+  width: 339px;
+  margin-left: -2px;
+  margin-top: -2px;
+}
 .equisIcon {
-  display: none;
+  height: 14px;
+  width: auto;
+  float: right;
+  margin: 13px 10px
 }
 .cloudTxtIcon{
-  display: none;
+  height: 30px;
+  width: auto;
+  float: left;
+  margin: 5px 10px
 }
-#postContainerFriend1{
-  display: none;
+.txtFriendStyle{
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  color: #8E8989;
+  margin: 25px;
+  width: 281px;
+  border: none;
+  resize: none;
+}
+.likesAndCommentsStyle{
+  background-color: #FEDCDE;
+  border-radius: 0px 0px 10px 10px;
+  height: 58px;
+  width: 336px;
+  display: flex;
+  align-items: center;
+}
+.buttonLikesStyle{
+  height: 35px;
+  width: auto;
+}
+#buttonLikes{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.likesCounterStyle{
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: #471F54;
+}
+.buttonCommentStyle{
+  height: 35px;
+  width: auto;
+}
+#buttonComment{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.txtCommentStyle{
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: #471F54;
+}
+#postContainerFriend2{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-color: #471F54;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1.8px;
+  height: 191px;
+  width: 335px;
+  left: 50%;
+  top: 165%;
 }
 
