@@ -100,4 +100,7 @@ signInWithPopup(auth, provider)
       onNavigate('/login');
     });
 
-
+export const getPost = () => {
+  getDocs(collection(db, 'postUser'))
+  
+};
