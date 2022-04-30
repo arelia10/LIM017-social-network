@@ -1,14 +1,12 @@
 import { onNavigate } from '../main.js';
-import { savePost, getPost } from '../firebase/authFunctions.js';
-
-export const Login = () => {
-  const LoginMain = document.createElement('main');
-  LoginMain.innerHTML = `<header id="backgroundHeader">
-        <img class="isotype" src="./img/iconUser.svg">
+export const Login= () =>{
+  let LoginMain= document.createElement("main");
+  LoginMain.innerHTML = /*html*/
+  `<header id="backgroundHeader">
+| <img class="isotype" src="./img/iconUser.svg">
         <button id="loginOutBtn"><img class="loginOutIcon" src="./img/iconoLoginOut.svg"></button>
       <div>
   </header>
-
 <!--Container post de user -->
   <br>
   <section id="postContainer">
@@ -21,7 +19,6 @@ export const Login = () => {
         <button id="buttonTrash"><img class="buttonTrashStyle" src="./img/iconTrash.svg"></button>
      </div>
   </section>
-
 <!--Container post user's friend 1 -->
   <br>
   <section id="postContainerFriend1">
@@ -39,7 +36,6 @@ export const Login = () => {
               <button id="buttonComment"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
               <p id="txtComment" class="txtCommentStyle">Ver comentarios</p>
         </div>
-
 <!--Container post user's friend 2 -->
   <br>
   <section id="postContainerFriend2">
@@ -61,17 +57,6 @@ export const Login = () => {
 
   LoginMain.classList.add('loginMain');
   LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => onNavigate('/'));
-
-  window.addEventListener('DOMContentLoaded', async () => {
-    const querySnapshot = await getPost()
-    console.log(querySnapshot)
-  });
-
-  LoginMain.querySelector('#buttonPost').addEventListener('click', (e) => {
-    e.preventDefault()
-    const contentUserPost = document.getElementById('txtUserPost').value;
-    savePost(contentUserPost)
-  });
 
   return LoginMain;
 };
