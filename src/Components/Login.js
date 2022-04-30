@@ -1,4 +1,5 @@
 import { onNavigate } from '../main.js';
+import { savePost, getPost } from '../firebase/authFunctions.js';
 
 export const Login = () => {
   const LoginMain = document.createElement('main');
@@ -60,6 +61,17 @@ export const Login = () => {
 
   LoginMain.classList.add('loginMain');
   LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => onNavigate('/'));
+
+  window.addEventListener('DOMContentLoaded', async () => {
+    const querySnapshot = await getPost()
+    console.log(querySnapshot)
+  });
+
+  LoginMain.querySelector('#buttonPost').addEventListener('click', (e) => {
+    e.preventDefault()
+    const contentUserPost = document.getElementById('txtUserPost').value;
+    savePost(contentUserPost)
+  });
 
   return LoginMain;
 };

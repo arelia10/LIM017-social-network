@@ -4,17 +4,20 @@ import {
   createUserWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
-  signInWithEmailAndPassword }
+  signInWithEmailAndPassword,
+}
   from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
-import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
 
 export {
-   initializeApp,
-   getAuth,
-   createUserWithEmailAndPassword,
-   signInWithPopup,
-   GoogleAuthProvider,
-   signInWithEmailAndPassword,
-   getFirestore,
-   collection,
-   addDoc }
+  initializeApp,
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+};
