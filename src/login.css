@@ -1,28 +1,33 @@
-.loginMain{
-    width: 100vw;
-    height: 100vh;
+.loginMain {
+  width: 100vw;
+  height: 100vh;
 }
-#backgroundHeader{
-    background-color: #FB727C;
-    align-items: center;
+
+#backgroundHeader {
+  background-color: #FB727C;
+  align-items: center;
 }
-.isotype{
+
+.isotype {
   width: 50px;
   padding: 15px;
 }
-#loginOutBtn{
+
+#loginOutBtn {
   background-color: inherit;
   border: none;
   cursor: pointer;
   padding: 15px;
   float: right;
 }
-.loginOutIcon{
+
+.loginOutIcon {
   height: 51px;
   width: 51px;
   float: right;
 }
-#postContainer{
+
+#postContainer {
   position: absolute;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -35,7 +40,8 @@
   left: 50%;
   top: 24%;
 }
-.userInfoPost{
+
+.userInfoPost {
   padding: 10px;
   margin: 10px;
   height: 88px;
@@ -48,11 +54,13 @@
   font-family: 'Inter', sans-serif;
   color: #8E8989;
 }
-.userInfoPost::placeholder{
+
+.userInfoPost::placeholder {
   font-size: 15px;
   font-style: italic;
 }
-#buttonPost{
+
+#buttonPost {
   cursor: pointer;
   background-color: #471F54;
   border-radius: 25px;
@@ -64,7 +72,8 @@
   text-align: center;
   margin-left: 10px;
 }
-#buttonEdit{
+
+#buttonEdit {
   cursor: pointer;
   background-color: #FB727C;
   border-radius: 25px;
@@ -76,12 +85,14 @@
   text-align: center;
   margin-left: 10px;
 }
-.buttonTrashStyle{
+
+.buttonTrashStyle {
   height: 27px;
   width: 51px;
   float: right;
 }
-#buttonTrash{
+
+#buttonTrash {
   background-color: inherit;
   border: none;
   cursor: pointer;
@@ -90,7 +101,8 @@
   float: right;
   margin-right: -17px;
 }
-#postContainerFriend1{
+
+#postContainerFriend1 {
   position: absolute;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -103,7 +115,8 @@
   left: 50%;
   top: 50%;
 }
-.postFriendStyle{
+
+.postFriendStyle {
   background-color: #471F54;
   border-radius: 10px 10px 0px 0px;
   height: 40px;
@@ -111,19 +124,22 @@
   margin-left: -2px;
   margin-top: -2px;
 }
+
 .equisIcon {
   height: 14px;
   width: auto;
   float: right;
   margin: 13px 10px
 }
-.cloudTxtIcon{
+
+.cloudTxtIcon {
   height: 30px;
   width: auto;
   float: left;
   margin: 5px 10px
 }
-.txtFriendStyle{
+
+.txtFriendStyle {
   font-size: 15px;
   font-family: 'Inter', sans-serif;
   color: #8E8989;
@@ -132,7 +148,8 @@
   border: none;
   resize: none;
 }
-.likesAndCommentsStyle{
+
+.likesAndCommentsStyle {
   background-color: #FEDCDE;
   border-radius: 0px 0px 10px 10px;
   height: 58px;
@@ -140,39 +157,46 @@
   display: flex;
   align-items: center;
 }
-.buttonLikesStyle{
+
+.buttonLikesStyle {
   height: 35px;
   width: auto;
 }
-#buttonLikes{
+
+#buttonLikes {
   background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 10px;
 }
-.likesCounterStyle{
+
+.likesCounterStyle {
   font-size: 12px;
   font-weight: 600;
   font-family: 'Inter', sans-serif;
   color: #471F54;
 }
-.buttonCommentStyle{
+
+.buttonCommentStyle {
   height: 35px;
   width: auto;
 }
-#buttonComment{
+
+#buttonComment {
   background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 10px;
 }
-.txtCommentStyle{
+
+.txtCommentStyle {
   font-size: 12px;
   font-weight: 600;
   font-family: 'Inter', sans-serif;
   color: #471F54;
 }
-#postContainerFriend2{
+
+#postContainerFriend2 {
   position: absolute;
   transform: translate(-50%, -50%);
   background-color: white;

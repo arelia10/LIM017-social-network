@@ -10,7 +10,7 @@ const routes = {
   '/login': Login,
 };
 
-export const onNavigate = (pathname) =>{
+export const onNavigate = (pathname) => {
   window.history.pushState(
     {},
     pathname,

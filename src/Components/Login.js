@@ -1,10 +1,9 @@
 import { onNavigate } from '../main.js';
-
 export const Login= () =>{
   let LoginMain= document.createElement("main");
   LoginMain.innerHTML = /*html*/
   `<header id="backgroundHeader">
-        <img class="isotype" src="./img/iconUser.svg">
+| <img class="isotype" src="./img/iconUser.svg">
         <button id="loginOutBtn"><img class="loginOutIcon" src="./img/iconoLoginOut.svg"></button>
       <div>
   </header>
@@ -54,13 +53,10 @@ export const Login= () =>{
               <button id="buttonComment"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
                <p id="txtComment" class="txtCommentStyle">Ver comentarios</p>
        </div>
-  </section>`
+  </section>`;
 
-
-
-  LoginMain.classList.add("loginMain");
-  LoginMain.querySelector("#loginOutBtn").addEventListener('click', () => onNavigate('/'));
-
+  LoginMain.classList.add('loginMain');
+  LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => onNavigate('/'));
 
   return LoginMain;
 };
