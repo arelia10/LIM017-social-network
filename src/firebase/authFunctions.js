@@ -7,8 +7,9 @@ import {
   signInWithEmailAndPassword,
   getFirestore,
   collection,
-  addDoc
- }
+  addDoc,
+  getDocs,
+}
   from './firebaseImports.js';
 import { onNavigate } from '../main.js';
 
@@ -19,11 +20,12 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
   createUserWithEmailAndPassword(auth, loginEmail, loginPassword)
     .then(() => {
       try {
-          addDoc(collection(db, 'RegisterTellMe'), {
+      addDoc(collection(db, 'RegisterTellMe'), {
           newNickName: loginName,
           newEmail: loginEmail,
+          newPassword: loginPassword,
         });
-        /*alert("Registro realizado con éxito ", RegisterTellMe.nickName);*/
+
         swal.fire({
           title: '<p class="txtConfirmSwal">Te registraste con éxito</p>',
           icon: 'success',
@@ -32,7 +34,7 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
           confirmButtonColor: '#471F54',
           buttonsStyling: 'false',
           customClass: {
-          confirmButton: 'confirmButtonStyle',
+            confirmButton: 'confirmButtonStyle',
           },
         })
           .then((result) => {
@@ -40,7 +42,7 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
               location.href = ('/');
             }
           });
-    }
+      }
       catch (e) {
         console.error('Error, el correo ya se encuentra registrado', e);
       }
@@ -62,8 +64,8 @@ export const signInWithEmail = (loginEmail, loginPassword) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      const wrongMessage = 'contraseña incorrecta';
-      console.log(wrongMessage)
+      const wrongMessage = 'Debes registrarte para iniciar sesión';
+      alert(wrongMessage);
     });
 };
 
@@ -72,15 +74,20 @@ export const loginGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
       const user = result.user;
       onNavigate('/login');
       return user;
     }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      const email = error.email;
-      const credential = GoogleAuthProvider.credentialFromError(error);
       onNavigate('/login');
     });
+};
+
+export const savePost = (contentUserPost) => {
+  addDoc(collection(db, 'postUser'), {
+      newPost: contentUserPost,
+    });
+};
+
+export const getPost = () => {
+  getDocs(collection(db, 'postUser'))
 };
