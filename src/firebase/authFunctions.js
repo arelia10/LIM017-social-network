@@ -90,4 +90,5 @@ export const savePost = (contentUserPost) => {
 
 export const getPost = () => {
   getDocs(collection(db, 'postUser'))
+  
 };
