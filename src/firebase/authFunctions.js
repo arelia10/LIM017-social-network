@@ -25,7 +25,6 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
           newEmail: loginEmail,
           newPassword: loginPassword,
         });
-
         swal.fire({
           title: '<p class="txtConfirmSwal">Te registraste con éxito</p>',
           icon: 'success',
@@ -52,7 +51,6 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
       const errorMessage = error.message;
       alert('Error, debes ingresar datos correctos');
     });
-
 };
 
 export const signInWithEmail = (loginEmail, loginPassword) => {
@@ -83,12 +81,9 @@ export const loginGoogle = () => {
 };
 
 export const savePost = (contentUserPost) => {
-  addDoc(collection(db, 'postUser'), {
-      newPost: contentUserPost,
-    });
+  addDoc(collection(db, 'postUser'), { contentUserPost });
 };
 
 export const getPost = () => {
   getDocs(collection(db, 'postUser'))
-  
 };
