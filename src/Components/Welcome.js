@@ -2,9 +2,11 @@ import { onNavigate } from '../main.js';
 import { loginGoogle, signInWithEmail } from '../firebase/authFunctions.js';
 
 export const Welcome = () => {
-  const WelcomeDiv = document.createElement('section');
-  WelcomeDiv.innerHTML = `<section>
-   <main class="container">
+
+  let WelcomeDiv = document.createElement("section");
+  WelcomeDiv.innerHTML = /*html*/
+  `<section>
+  <main class="container">
      <img class="logotype" src="./img/LogoTellMe.svg">
     <div>
         <br>
