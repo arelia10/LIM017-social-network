@@ -23,7 +23,10 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
           newNickName: loginName,
           newEmail: loginEmail,
         });
+<<<<<<< HEAD
+=======
         /*alert("Registro realizado con éxito ", RegisterTellMe.nickName);*/
+>>>>>>> b05bff931ed6caae28fe4961bd874275b5baf2e0
         swal.fire({
           title: '<p class="txtConfirmSwal">Te registraste con éxito</p>',
           icon: 'success',
@@ -50,7 +53,6 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
       const errorMessage = error.message;
       alert('Error, debes ingresar datos correctos');
     });
-
 };
 
 export const signInWithEmail = (loginEmail, loginPassword) => {
@@ -99,8 +101,15 @@ signInWithPopup(auth, provider)
       const credential = GoogleAuthProvider.credentialFromError(error);
       onNavigate('/login');
     });
+<<<<<<< HEAD
+};
+
+export const savePost = (contentUserPost) => {
+  addDoc(collection(db, 'postUser'), { contentUserPost });
+};
+=======
+>>>>>>> b05bff931ed6caae28fe4961bd874275b5baf2e0
 
 export const getPost = () => {
   getDocs(collection(db, 'postUser'))
-  
 };

@@ -6,28 +6,34 @@
 #backgroundHeader {
   background-color: #FB727C;
   align-items: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .isotype {
-  width: 50px;
-  padding: 15px;
+  width: 40px;
+  padding: 7px;
 }
 
 #loginOutBtn {
   background-color: inherit;
   border: none;
   cursor: pointer;
-  padding: 15px;
+  /*padding: 15px;*/
   float: right;
 }
 
 .loginOutIcon {
-  height: 51px;
-  width: 51px;
+  height: 40px;
   float: right;
 }
 
-#postContainer {
+.infoRegisterHeader{
+  background-color: black;
+  border: none;
+}
+
+#postForm {
   position: absolute;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -209,4 +215,7 @@
   left: 50%;
   top: 165%;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> b05bff931ed6caae28fe4961bd874275b5baf2e0
