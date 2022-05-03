@@ -215,7 +215,9 @@
   left: 50%;
   top: 165%;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> b05bff931ed6caae28fe4961bd874275b5baf2e0
+.btnLikeAndCommentTrash{
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}

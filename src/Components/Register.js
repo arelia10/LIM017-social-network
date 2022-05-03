@@ -3,8 +3,7 @@ import { registerWithEmail } from '../firebase/authFunctions.js';
 
 export const Register = () => {
   const RegisterSection = document.createElement('section');
-  RegisterSection.innerHTML = /*html*/
-  `<section>
+  RegisterSection.innerHTML = `<section>
       <main id="containerRegister" class="containerRegister">
         <p id="registerApp" class="registerApp">Regístrate</p>
         <div id="formRegister" class="txtRegister">
@@ -27,13 +26,14 @@ export const Register = () => {
                 </div>
          </div>
     </main>
-  section>`;
+  </section>`;
 
   const LogotypeSection = document.createElement('section');
   LogotypeSection.innerHTML = `<section id="containerLogotype">
       <img class="logotypeRegister" src="./img/LogoTellMeBlanco.svg">
   </section>`;
-const ContainerBackground = document.createElement('section');
+
+  const ContainerBackground = document.createElement('section');
   ContainerBackground.innerHTML = `<section>
       <main class="containerBackground">
       </main>
