@@ -221,3 +221,9 @@
   border: none;
   cursor: pointer;
 }
+
+.btntTrash{
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
