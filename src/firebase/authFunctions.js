@@ -7,7 +7,8 @@ import {
   signInWithEmailAndPassword,
   getFirestore,
   collection,
-  addDoc
+  addDoc,
+  onSnapshot,
  }
   from './firebaseImports.js';
 import { onNavigate } from '../main.js';
@@ -23,10 +24,6 @@ export const registerWithEmail = (loginEmail, loginPassword, loginName) => {
           newNickName: loginName,
           newEmail: loginEmail,
         });
-<<<<<<< HEAD
-=======
-        /*alert("Registro realizado con éxito ", RegisterTellMe.nickName);*/
->>>>>>> b05bff931ed6caae28fe4961bd874275b5baf2e0
         swal.fire({
           title: '<p class="txtConfirmSwal">Te registraste con éxito</p>',
           icon: 'success',
@@ -99,17 +96,17 @@ signInWithPopup(auth, provider)
       const errorMessage = error.message;
       const email = error.email;
       const credential = GoogleAuthProvider.credentialFromError(error);
-      onNavigate('/login');
     });
-<<<<<<< HEAD
-};
 
+
+// Guarda los posts
 export const savePost = (contentUserPost) => {
-  addDoc(collection(db, 'postUser'), { contentUserPost });
+  addDoc(collection(db, 'postUser'), {
+    contentUserPost, likes: 0, date: new Date(Date.now()),
+  });
 };
-=======
->>>>>>> b05bff931ed6caae28fe4961bd874275b5baf2e0
-
-export const getPost = () => {
-  getDocs(collection(db, 'postUser'))
-};
+export const updatePost = (id, newFields) => updateDoc(doc(db, 'Posts', id), newFields);
+export const dataUser = () => {
+  const auth = getAuth();
+  const user = auth.currentUser;
+  return user;}
