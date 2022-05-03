@@ -1,11 +1,10 @@
 import { onNavigate } from '../main.js';
-import { savePost,updatePost,dataUser} from '../firebase/authFunctions.js';
-
+import { savePost, getPost, deletePost } from '../firebase/authFunctions.js';
 
 export const Login = () => {
   const LoginMain = document.createElement('main');
-  LoginMain.innerHTML = /*html*/
-  `<header id="backgroundHeader">
+  LoginMain.classList.add('loginMain');
+  LoginMain.innerHTML = `<header id="backgroundHeader">
         <img class="isotype" src="./img/iconUser.svg">
           <div>
             <input type="text" id="nickNameHeader" class="infoRegisterHeader">
@@ -22,30 +21,44 @@ export const Login = () => {
       </div>
         <div>
           <button id="buttonPost">Publicar</button>
-        </div>
+       </div>
     </form>
-  </section>
+  </section>`;
 
-  <!-- TasksList -->
-  <div class="col-md-6" id="tasks-container"></div>`
+  LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => { exit().then(onNavigate('/'));
+  });
 
-  LoginMain.classList.add('loginMain');
-  LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => onNavigate('/'));
+  const postForm = document.getElementById('postForm')
+  
+  LoginMain.querySelector('#buttonPost').addEventListener('click', async (e) => {
+  const querySnapshot = await getPost();
+    querySnapshot.forEach(doc => {
+      //console.log(doc.data())
+      const task = doc.data()
+      postContainer.innerHTML += `
+      <br>
+      <section id="postContainerFriend1">
+        <div id="postFriend1" class="postFriendStyle">
+          <img class="equisIcon" src="./img/equis.svg">
+          <img class="cloudTxtIcon" src="./img/cloudTxtIcon.svg">
+        </div>
+          <div>
+            <p id="txtFriend" class="txtFriendStyle">${task.contentUserPost}</p>
+        </div>
+            <div id="likesAndComments" class="likesAndCommentsStyle">
+              <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonLikesStyle" src="./img/likesIcon.svg"></button>
+                <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
+                  <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
+                    <button class="btnLikeAndCommentTrash" id="btnTrash" data-id="${doc.id}"><img class="buttonTrashStyle" src="./img/iconTrash.svg"></button>
+            </div> `
+      });
+  });
 
-  const postForm =  LoginMain.querySelector('#postForm');
-  let editStatus = false;
-  let id = '';
-  postForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const contentUserPost = postForm.txtUserPost;
-    if (!editStatus && contentUserPost.value !== '') {
-      savePost(contentUserPost, dataUser());
-    } else {
-      updatePost(id, {contentUserPost: contentUserPost.value });
-      editStatus = false;
-      postForm.buttonPost.innerText = 'Publicar';
-    }
-    postForm.reset();
+  LoginMain.querySelector('#buttonPost').addEventListener('click', (e) => {
+      e.preventDefault()
+      const contentUserPost = document.getElementById('txtUserPost').value;
+      const eraser = document.getElementById('postForm').reset();
+      savePost(contentUserPost)
   });
 
   return LoginMain;

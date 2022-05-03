@@ -215,3 +215,9 @@
   left: 50%;
   top: 165%;
 }
+
+.btnLikeAndCommentTrash{
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
