@@ -9,6 +9,7 @@ import {
   collection,
   addDoc,
   getDocs,
+  onSnapshot,
   deleteDoc,
 }
   from './firebaseImports.js';
@@ -98,4 +99,15 @@ export const getPost = async () => {
   //console.log(postUser)
 };
 
-export const deletePost = (id) => deleteDoc(doc(db, "tasks", id));
+export const onGetPost = (callback) =>
+  onSnapshot(collection(db, "postUser"), callback);
+
+/*export const deletePost = async (id) => {
+  try {
+    return await deleteDoc(doc(db, "postUser", id))
+  }
+  catch(error) {
+    throw error
+  }
+};*/
+export const deletePost = (id) => deleteDoc(doc(db, "postUser", id));

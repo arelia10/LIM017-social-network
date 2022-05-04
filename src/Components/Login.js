@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { savePost, getPost, deletePost } from '../firebase/authFunctions.js';
+import { savePost, getPost, onGetPost, deletePost } from '../firebase/authFunctions.js';
 
 export const Login = () => {
   const LoginMain = document.createElement('main');
@@ -27,30 +27,30 @@ export const Login = () => {
 
   LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => { exit().then(onNavigate('/'));
   });
-
-  const postForm = document.getElementById('postForm')
   
   LoginMain.querySelector('#buttonPost').addEventListener('click', async (e) => {
   const querySnapshot = await getPost();
     querySnapshot.forEach(doc => {
-      //console.log(doc.data())
+      console.log(doc.data())
       const task = doc.data()
       postContainer.innerHTML += `
       <br>
-      <section id="postContainerFriend1">
-        <div id="postFriend1" class="postFriendStyle">
-          <img class="equisIcon" src="./img/equis.svg">
-          <img class="cloudTxtIcon" src="./img/cloudTxtIcon.svg">
-        </div>
-          <div>
-            <p id="txtFriend" class="txtFriendStyle">${task.contentUserPost}</p>
-        </div>
-            <div id="likesAndComments" class="likesAndCommentsStyle">
-              <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonLikesStyle" src="./img/likesIcon.svg"></button>
-                <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
-                  <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
-                    <button class="btnLikeAndCommentTrash" id="btnTrash" data-id="${doc.id}"><img class="buttonTrashStyle" src="./img/iconTrash.svg"></button>
-            </div> `
+      <section class="postContainer">
+        <div id="postContainerFriend1">
+          <div id="postFriend1" class="postFriendStyle">
+            <img class="cloudTxtIcon" src="./img/cloudTxtIcon.svg">
+          </div>
+            <div>
+              <p id="txtFriend" class="txtFriendStyle">${task.contentUserPost}</p>
+          </div>
+              <div id="likesAndComments" class="likesAndCommentsStyle">
+                <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonLikesStyle" src="./img/likesIcon.svg"></button>
+                  <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
+                    <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
+                      <button class="btnTrash" id="btn btnTrash" data-id="${doc.id}"><img class="buttonTrashStyle" src="./img/iconTrash.svg"></button>
+              </div>
+        </div>      
+      </section> `
       });
   });
 
@@ -59,7 +59,9 @@ export const Login = () => {
       const contentUserPost = document.getElementById('txtUserPost').value;
       const eraser = document.getElementById('postForm').reset();
       savePost(contentUserPost)
-  });
+  });  
 
-  return LoginMain;
-};
+ return LoginMain;
+
+}
+

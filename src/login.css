@@ -109,17 +109,11 @@
 }
 
 #postContainerFriend1 {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-color: #471F54;
-  border-radius: 10px;
-  border-style: solid;
-  border-width: 1.8px;
+  display: grid;
+  align-items: center;
+  transform: translate(7%, 115%);
   height: 191px;
-  width: 335px;
-  left: 50%;
-  top: 50%;
+  width: auto;
 }
 
 .postFriendStyle {
@@ -202,7 +196,7 @@
   color: #471F54;
 }
 
-#postContainerFriend2 {
+/*#postContainerFriend2 {
   position: absolute;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -211,12 +205,18 @@
   border-style: solid;
   border-width: 1.8px;
   height: 191px;
-  width: 335px;
+  width: auto;
   left: 50%;
   top: 165%;
-}
+}*/
 
 .btnLikeAndCommentTrash{
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.btntTrash{
   background-color: inherit;
   border: none;
   cursor: pointer;
