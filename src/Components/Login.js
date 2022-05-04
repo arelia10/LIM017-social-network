@@ -27,16 +27,16 @@ export const Login = () => {
 
   LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => { exit().then(onNavigate('/'));
   });
-
-  window.addEventListener('DOMContentLoaded', async () => {
-  //LoginMain.querySelector('#buttonPost').addEventListener('click', async (e) => {
-    const querySnapshot = await getPost();
-      querySnapshot.forEach(doc => {
-        //console.log(doc.data())
-        const task = doc.data()
-        postContainer.innerHTML += `
-        <br>
-        <section id="postContainerFriend1">
+  
+  LoginMain.querySelector('#buttonPost').addEventListener('click', async (e) => {
+  const querySnapshot = await getPost();
+    querySnapshot.forEach(doc => {
+      console.log(doc.data())
+      const task = doc.data()
+      postContainer.innerHTML += `
+      <br>
+      <section class="postContainer">
+        <div id="postContainerFriend1">
           <div id="postFriend1" class="postFriendStyle">
             <img class="cloudTxtIcon" src="./img/cloudTxtIcon.svg">
           </div>
@@ -48,30 +48,9 @@ export const Login = () => {
                   <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
                     <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
                       <button class="btnTrash" id="btn btnTrash" data-id="${doc.id}"><img class="buttonTrashStyle" src="./img/iconTrash.svg"></button>
-              </div> `
-        });
-    });
-  
-  LoginMain.querySelector('#buttonPost').addEventListener('click', async (e) => {
-  const querySnapshot = await getPost();
-    querySnapshot.forEach(doc => {
-      //console.log(doc.data())
-      const task = doc.data()
-      postContainer.innerHTML += `
-      <br>
-      <section id="postContainerFriend1">
-        <div id="postFriend1" class="postFriendStyle">
-          <img class="cloudTxtIcon" src="./img/cloudTxtIcon.svg">
-        </div>
-          <div>
-            <p id="txtFriend" class="txtFriendStyle">${task.contentUserPost}</p>
-        </div>
-            <div id="likesAndComments" class="likesAndCommentsStyle">
-              <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonLikesStyle" src="./img/likesIcon.svg"></button>
-                <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
-                  <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
-                    <button class="btnTrash" id="btn btnTrash" data-id="${doc.id}"><img class="buttonTrashStyle" src="./img/iconTrash.svg"></button>
-            </div> `
+              </div>
+        </div>      
+      </section> `
       });
   });
 
