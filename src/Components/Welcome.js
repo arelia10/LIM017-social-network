@@ -8,10 +8,10 @@ export const Welcome = () => {
     <div>
         <br>
         <p id="welcomeApp" class="welcomeApp">¡Bienvenid@!</p>
-          <input placeholder="Email" type="email" id="email" class="userInfo"></input>
+          <input placeholder="Email" type="email" id="email" class="userInfo">
         <br>
         <br>
-          <input placeholder="Password" id="password" class="userInfo" type="password"></input>
+          <input placeholder="Password" id="password" class="userInfo" type="password">
          <button id="buttonLogin">Iniciar sesión</button>
          <p class="ingresoGoogle">O bien ingresa con...</p>
     </div>
