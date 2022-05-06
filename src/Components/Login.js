@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { savePost, getPost, onGetPost } from '../firebase/authFunctions.js';
+import { savePost, getPost, onGetPost, deletePost } from '../firebase/authFunctions.js';
 
 export const Login = () => {
   const LoginMain = document.createElement('main');
@@ -55,12 +55,17 @@ export const Login = () => {
                 <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonLikesStyle" src="./img/likesIcon.svg"></button>
                   <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
                     <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
-                      <button class="btnTrash" id="btn btnTrash" data-id="${doc.id}"><img class="buttonTrashStyle" src="./img/iconTrash.svg"></button>
+                      <button class="btn-Trash" data-id="${doc.id}">🗑</button>
               </div>
         </div>      
       </section>`
-      /*});*/
   });
+    const btnDelete = newContainerPost.querySelectorAll(".btn-Trash");
+    btnDelete.forEach(btn => {
+      btn.addEventListener("click", ({target:{dataset}}) => {
+        deletePost(dataset.id)
+    })
+  })
  })
 })
 
@@ -70,6 +75,7 @@ export const Login = () => {
       const eraser = document.getElementById('postForm').reset();
       savePost(contentUserPost)
   });  
+
 
  return LoginMain;
 
