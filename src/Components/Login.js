@@ -28,18 +28,17 @@ export const Login = () => {
   </section>`;
   
   /*Container cerrar sesión*/
-  LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => { exit().then(onNavigate('/'));
-  });
-  
+  LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => onNavigate('/'));
+    
   const postForm = document.getElementById("postForm");
   let editStatus = false;
   let id = '';
+
   /*Container de post*/
-  //LoginMain.querySelector('#buttonPost').addEventListener('click', async (e) => {
+  
   window.addEventListener('DOMContentLoaded', async (e) => {
     //const querySnapshot = await getPost();  
     //querySnapshot.forEach(doc => {
-    //  console.log(doc.data())
     onGetPost((querySnapshot) => {
       newContainerPost.innerHTML = "";
       querySnapshot.forEach((doc) => {
@@ -55,21 +54,21 @@ export const Login = () => {
               <p id="txtFriend" class="txtFriendStyle">${task.contentUserPost}</p>
           </div>
               <div id="likesAndComments" class="likesAndCommentsStyle">
-                <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonLikesStyle" src="./img/likesIcon.svg"></button>
-                  <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
-                    <button class="btn-Edit" data-id="${doc.id}">🖉</button>
-                      <button class="btn-Trash" data-id="${doc.id}">🗑</button>
+                <button class="btn-Like" data-id="${doc.id}">🤍Like</button>
+                    <button class="btn-Edit" data-id="${doc.id}">Editar</button>
+                      <button class="btn-Trash" data-id="${doc.id}">Eliminar</button>
               </div>
         </div>      
       </section>`
   });
+/*Función para borrar post*/
     const btnDelete = newContainerPost.querySelectorAll(".btn-Trash");
     btnDelete.forEach(btn => {
       btn.addEventListener("click", ({target:{dataset}}) => {
         deletePost(dataset.id)
     })
   })
-
+/*Función para editar post*/
   const btnEdit = newContainerPost.querySelectorAll(".btn-Edit");
     btnEdit.forEach((btn) => {
       btn.addEventListener("click", async (e) => {
@@ -77,18 +76,16 @@ export const Login = () => {
       //console.log(doc.data())
       const task = doc.data();
       
-      //postForm['txtUserPost'].value = task.contentUserPost
       const contentUserPost = document.getElementById('txtUserPost').value = task.contentUserPost
       editStatus = true;
       id = doc.id;
-      //ocument.getElementById('buttonPost').innerText = 'UpDate'
-
+      //document.getElementById('buttonPost').innerText = 'UpDate'
  })
 })
 
  })
 })
-
+/*Función para actualizar post y salvar información*/
   LoginMain.querySelector('#buttonPost').addEventListener('click', (e) => {
       e.preventDefault()
       
