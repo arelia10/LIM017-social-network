@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { savePost, getPost, onGetPost, deletePost } from '../firebase/authFunctions.js';
+import { savePost, getPost, onGetPost, deletePost, getEdit, updatePost } from '../firebase/authFunctions.js';
 
 export const Login = () => {
   const LoginMain = document.createElement('main');
@@ -30,7 +30,10 @@ export const Login = () => {
   /*Container cerrar sesión*/
   LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => { exit().then(onNavigate('/'));
   });
-
+  
+  const postForm = document.getElementById("postForm");
+  let editStatus = false;
+  let id = '';
   /*Container de post*/
   //LoginMain.querySelector('#buttonPost').addEventListener('click', async (e) => {
   window.addEventListener('DOMContentLoaded', async (e) => {
@@ -54,7 +57,7 @@ export const Login = () => {
               <div id="likesAndComments" class="likesAndCommentsStyle">
                 <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonLikesStyle" src="./img/likesIcon.svg"></button>
                   <p id="likesCounter" class="likesCounterStyle"><span>1,030 Likes</span></p>
-                    <button class="btnLikeAndCommentTrash" data-id="${doc.id}"><img class="buttonCommentStyle" src="./img/commentIcon.svg"></button>
+                    <button class="btn-Edit" data-id="${doc.id}">🖉</button>
                       <button class="btn-Trash" data-id="${doc.id}">🗑</button>
               </div>
         </div>      
@@ -66,14 +69,42 @@ export const Login = () => {
         deletePost(dataset.id)
     })
   })
+
+  const btnEdit = newContainerPost.querySelectorAll(".btn-Edit");
+    btnEdit.forEach((btn) => {
+      btn.addEventListener("click", async (e) => {
+      const doc = await getEdit(e.target.dataset.id)
+      //console.log(doc.data())
+      const task = doc.data();
+      
+      //postForm['txtUserPost'].value = task.contentUserPost
+      const contentUserPost = document.getElementById('txtUserPost').value = task.contentUserPost
+      editStatus = true;
+      id = doc.id;
+      //ocument.getElementById('buttonPost').innerText = 'UpDate'
+
+ })
+})
+
  })
 })
 
   LoginMain.querySelector('#buttonPost').addEventListener('click', (e) => {
       e.preventDefault()
-      const contentUserPost = document.getElementById('txtUserPost').value;
+      
+      if(!editStatus) {
+        const contentUserPost = document.getElementById('txtUserPost').value;
+        savePost(contentUserPost)
+      } 
+      else {
+        const contentUserPost = document.getElementById('txtUserPost').value;
+        updatePost(id, {contentUserPost});
+
+        editStatus = false;
+      }      
+
       const eraser = document.getElementById('postForm').reset();
-      savePost(contentUserPost)
+      
   });  
 
 

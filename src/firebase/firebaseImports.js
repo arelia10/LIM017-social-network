@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
 }
   from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
-import { getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc, doc  } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc, doc, getDoc, updateDoc  } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
 
 export {
   initializeApp,
@@ -23,4 +23,6 @@ export {
   onSnapshot,
   deleteDoc,
   doc,
+  getDoc,
+  updateDoc,
 };
