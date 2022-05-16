@@ -2,6 +2,8 @@ import { onNavigate } from '../main.js';
 import { savePost, getPost, onGetPost, deletePost, getEdit, updatePost } from '../firebase/authFunctions.js';
 
 export const Login = () => {
+  /*const nameLogIn = getCurrentUser().displayName;
+  const uidLogIn = getCurrentUser().uid;*/
   const LoginMain = document.createElement('main');
   LoginMain.classList.add('loginMain');
   LoginMain.innerHTML = /*html*/
@@ -36,7 +38,7 @@ export const Login = () => {
 
   /*Container de post*/
   
-  window.addEventListener('DOMContentLoaded', async (e) => {
+  /*window.addEventListener('DOMContentLoaded', async (e) => {*/
     //const querySnapshot = await getPost();  
     //querySnapshot.forEach(doc => {
     onGetPost((querySnapshot) => {
@@ -60,7 +62,7 @@ export const Login = () => {
               </div>
         </div>      
       </section>`
-  });
+  ;
 /*Función para borrar post*/
     const btnDelete = newContainerPost.querySelectorAll(".btn-Trash");
     btnDelete.forEach(btn => {
