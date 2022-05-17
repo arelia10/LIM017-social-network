@@ -9,9 +9,9 @@ export const Login = () => {
   LoginMain.innerHTML = /*html*/
    `<header id="backgroundHeader">
         <img class="isotype" src="./img/iconUser.svg">
-          <div>
+          <!--<div>
             <input type="text" id="nickNameHeader" class="infoRegisterHeader">
-          </div>
+          </div>-->
         <button id="loginOutBtn"><img class="loginOutIcon" src="./img/iconoLoginOut.svg"></button>
   </header>
 
@@ -50,7 +50,7 @@ export const Login = () => {
       <section class="newContainerPost">
         <div id="postContainerFriend1">
           <div id="postFriend1" class="postFriendStyle">
-            <img class="cloudTxtIcon" src="./img/cloudTxtIcon.svg">
+            <img class="cloudTxtIcon" src="./img/iconUser.svg">
           </div>
             <div>
               <p id="txtFriend" class="txtFriendStyle">${task.contentUserPost}</p>

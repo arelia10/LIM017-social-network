@@ -7,19 +7,19 @@
   background-color: #FB727C;
   align-items: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .isotype {
-  width: 40px;
-  padding: 7px;
+  width: 133px;
+  padding: 12px;
 }
 
 #loginOutBtn {
   background-color: inherit;
   border: none;
   cursor: pointer;
-  /*padding: 15px;*/
+  padding-right: 13px;
   float: right;
 }
 
@@ -122,10 +122,10 @@
 }
 
 .cloudTxtIcon {
-  height: 30px;
+  height: 27px;
   width: auto;
   float: left;
-  margin: 5px 10px
+  margin: 8px 9px
 }
 
 .txtFriendStyle {

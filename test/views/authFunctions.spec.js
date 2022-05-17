@@ -1,6 +1,10 @@
 import { signInWithEmail, loginGoogle } from '../../src/firebase/authFunctions.js';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from '../../src/firebase/firebaseImports.js';
 import { Welcome } from '../../src/Components/Welcome.js';
+import { Register } from '../../src/Components/Register.js';
+import { Login } from '../../src/Components/Login.js';
+import { onNavigate } from '../../src/main.js';
+
 
 jest.mock('../../src/firebase/firebaseImports.js');
 
@@ -36,4 +40,24 @@ describe('Componente Welcome', () => {
     expect(loginGoogle()).toEqual(signInWithPopup());
   });
 });*/
+
+/*describe('Componente Register', () => {
+  it('Debería cambiar la ruta', () => {
+    const registerComponent = Register()
+    registerComponent.querySelector('#buttonReturnHome').dispatchEvent(new Event('click'))
+    const welcomeComponent = onNavigate('/');
+    expect(onNavigate('/')).toEqual(welcomeComponent);
+  })
+});*/
+
+describe('Componente Login', () => {
+  it('Botón para cerrar sesión', () => {
+    const loginComponent = Login()
+    loginComponent.querySelector('#loginOutBtn').dispatchEvent(new Event('click'))
+    const welcomeComponent = onNavigate('/');
+    expect(onNavigate('/')).toEqual(welcomeComponent);
+  })
+});
+
+
 

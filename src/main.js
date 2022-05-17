@@ -16,7 +16,7 @@ export const onNavigate = (pathname) => {
     pathname,
     window.location.origin + pathname,
   );
-console.log('QUIEN ERES?????',rootDiv)
+
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
   }
