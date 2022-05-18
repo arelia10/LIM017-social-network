@@ -28,28 +28,6 @@ describe('Componente Welcome', () => {
   })
 });
 
-/*describe('loginGoogle', () => {
-  
-  it('Debería', () => { signInWithPopup()
-    .then(() => {
-      expect(signInWithPopup).toHaveBeenCalled();
-      expect(signInWithPopup.mock.calls[0][1]).toEqual(new GoogleAuthProvider());
-    });
-  });
-  it('Función para ingresar con google', () => {
-    expect(loginGoogle()).toEqual(signInWithPopup());
-  });
-});*/
-
-/*describe('Componente Register', () => {
-  it('Debería cambiar la ruta', () => {
-    const registerComponent = Register()
-    registerComponent.querySelector('#buttonReturnHome').dispatchEvent(new Event('click'))
-    const welcomeComponent = onNavigate('/');
-    expect(onNavigate('/')).toEqual(welcomeComponent);
-  })
-});*/
-
 describe('Componente Login', () => {
   it('Botón para cerrar sesión', () => {
     const loginComponent = Login()
