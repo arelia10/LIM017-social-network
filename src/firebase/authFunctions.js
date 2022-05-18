@@ -12,6 +12,8 @@ import {
   onSnapshot,
   deleteDoc,
   doc,
+  getDoc,
+  updateDoc,
 }
   from './firebaseImports.js';
 import { onNavigate } from '../main.js';
@@ -97,18 +99,16 @@ export const getPost = async () => {
   catch(error){
     throw error
   }
-  //console.log(postUser)
 };
 
 export const onGetPost = (callback) =>
   onSnapshot(collection(db, 'postUser'), callback);
 
-/*export const deletePost = async (id) => {
-  try {
-    return await deleteDoc(doc(db, "postUser", id))
-  }
-  catch(error) {
-    throw error
-  }
-};*/
 export const deletePost = (id) => deleteDoc(doc(db, 'postUser', id));
+
+export const getEdit = (id) => getDoc(doc(db, 'postUser', id));
+
+export const updatePost = (id, newFields) =>
+  updateDoc(doc(db, 'postUser', id), newFields);
+
+  export const getCurrentUser = () => getAuth().currentUser;

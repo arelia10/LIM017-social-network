@@ -7,19 +7,19 @@
   background-color: #FB727C;
   align-items: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .isotype {
-  width: 40px;
-  padding: 7px;
+  width: 133px;
+  padding: 12px;
 }
 
 #loginOutBtn {
   background-color: inherit;
   border: none;
   cursor: pointer;
-  /*padding: 15px;*/
+  padding-right: 13px;
   float: right;
 }
 
@@ -79,19 +79,6 @@
   margin-left: 10px;
 }
 
-#buttonEdit {
-  cursor: pointer;
-  background-color: #FB727C;
-  border-radius: 25px;
-  border: none;
-  height: 25px;
-  width: 102px;
-  color: white;
-  font-size: 15px;
-  text-align: center;
-  margin-left: 10px;
-}
-
 .buttonTrashStyle {
   height: 25px;
   width: auto;
@@ -99,13 +86,15 @@
 }
 
 .btn-Trash {
-  background-color: inherit;
-  border: none;
   cursor: pointer;
-  padding: 15px;
-  margin-top: -18px;
-  float: right;
-  margin-right: -17px;
+  background-color: #FB727C;
+  border-radius: 25px;
+  border: none;
+  height: 25px;
+  width: 79px;
+  color: white;
+  font-size: 15px;
+  margin: 19px;
 }
 
 #postContainerFriend1 {
@@ -133,10 +122,10 @@
 }
 
 .cloudTxtIcon {
-  height: 30px;
+  height: 27px;
   width: auto;
   float: left;
-  margin: 5px 10px
+  margin: 8px 9px
 }
 
 .txtFriendStyle {
@@ -152,23 +141,41 @@
 .likesAndCommentsStyle {
   background-color: #FEDCDE;
   border-radius: 0px 0px 10px 10px;
-  height: 58px;
+  height: 45px;
   width: 336px;
   display: flex;
   align-items: center;
 }
-
-.buttonLikesStyle {
-  height: 35px;
-  width: auto;
+.btn-Edit {
+  cursor: pointer;
+  background-color: #FB727C;
+  border-radius: 25px;
+  border: none;
+  height: 25px;
+  width: 79px;
+  color: white;
+  font-size: 15px;
+  margin: 22px;
 }
 
-#buttonLikes {
+.btn-Like {
+  cursor: pointer;
+  background-color: #471F54;
+  border-radius: 25px;
+  border: none;
+  height: 25px;
+  width: 79px;
+  color: white;
+  font-size: 15px;
+  margin: 22px;
+}
+
+/*#buttonLikes {
   background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 10px;
-}
+}*/
 
 .likesCounterStyle {
   font-size: 12px;

@@ -2,7 +2,7 @@ import { Welcome } from './components/Welcome.js';
 import { Register } from './components/Register.js';
 import { Login } from './components/Login.js';
 
-const rootDiv = document.getElementById('root');
+const rootDiv = document.getElementById('root') ? document.getElementById('root') : document.createElement('div');
 
 const routes = {
   '/': Welcome,
@@ -24,5 +24,8 @@ export const onNavigate = (pathname) => {
   rootDiv.appendChild(routes[pathname]());
 };
 
+
+window.addEventListener("DOMContentLoaded",()=>{
 const components = routes[window.location.pathname];
 rootDiv.appendChild(components());
+});
