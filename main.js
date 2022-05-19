@@ -28,6 +28,7 @@ export const onNavigate = (pathname) => {
 window.addEventListener("DOMContentLoaded",()=>{
 const components = routes[window.location.pathname];
 console.log(components)
+window.onpopstate = () => rootDiv.appendChild(components);
 rootDiv.appendChild(components);
 
 });
