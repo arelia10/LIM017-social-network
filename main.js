@@ -1,6 +1,6 @@
-import { Welcome } from './components/Welcome.js';
-import { Register } from './components/Register.js';
-import { Login } from './components/Login.js';
+import { Welcome } from './Components/Welcome.js';
+import { Register } from './Components/Register.js';
+import { Login } from './Components/Login.js';
 
 const rootDiv = document.getElementById('root') ? document.getElementById('root') : document.createElement('div');
 
