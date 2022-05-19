@@ -27,5 +27,7 @@ export const onNavigate = (pathname) => {
 
 window.addEventListener("DOMContentLoaded",()=>{
 const components = routes[window.location.pathname];
+console.log(components)
 rootDiv.appendChild(components);
+
 });

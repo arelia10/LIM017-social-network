@@ -29,7 +29,7 @@ export const Welcome = () => {
 
   const BackgroundMobile = document.createElement('main');
   BackgroundMobile.innerHTML = `<main>
-      <img class="mobile" src="../img/bgMobile.jpg">
+      <img class="mobile" src="./img/bgMobile.jpg">
     </main>`;
 
   WelcomeDiv.appendChild(BackgroundMobile);
