@@ -31,8 +31,8 @@ export const Login = () => {
   
   /*Container cerrar sesión*/
   //LoginMain.querySelector('#loginOutBtn').addEventListener('click', () => onNavigate('/'));
-    
-  const postForm = document.getElementById("postForm");
+  const newContainerPost = LoginMain.querySelector("#newContainerPost");
+  const postForm = LoginMain.querySelector("#postForm");
   let editStatus = false;
   let id = '';
 
@@ -45,7 +45,7 @@ export const Login = () => {
       newContainerPost.innerHTML = "";
       querySnapshot.forEach((doc) => {
       const task = doc.data();
-      newContainerPost.innerHTML += /*html*/
+      newContainerPost.innerHTML += 
       `<br>
       <section class="newContainerPost">
         <div id="postContainerFriend1">
